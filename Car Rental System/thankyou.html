@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Car Rental System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">Car Rental Company</div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="icon open-icon">☰</span>
+                <span class="icon close-icon">✖</span>
+            </div>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">Cars</a></li>
+                <li><a href="/index.html">Rent a Car</a></li>
+                <li><a href="/index.html">Rental History</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Thank You Message -->
+    <main>
+        <section class="thankyou">
+            <h1>Thank You for Your Rental!</h1>
+            <p id="thankyou-message"></p>
+            <button id="print-button">Print Your Rental</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Car Rental Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Extract query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const car = urlParams.get('car');
+        const days = urlParams.get('days');
+        const total = urlParams.get('total');
+
+        // Display thank you message
+        const message = `Thank you, ${name}! You have rented the ${car} for ${days} days. The total cost is $${total}.`;
+        document.getElementById('thankyou-message').textContent = message;
+
+        // Print button functionality
+        document.getElementById('print-button').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Navbar Toggle Script
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.getElementById('navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

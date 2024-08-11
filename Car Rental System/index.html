@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">Car Rental Company</a>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="icon open-icon">☰</span>
+                <span class="icon close-icon">✖</span>
+            </div>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#rental-form">Rent a Car</a></li>
+                <li><a href="#rental-history">Rental History</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Welcome to Car Rental Company</h1>
+            <p>Find and rent your dream car today!</p>
+        </section>
+
+        <!-- Car List -->
+        <section id="cars">
+            <h2>Available Cars</h2>
+            <div id="cars-list" class="cars-list"></div>
+        </section>
+
+        <!-- Rental Form -->
+        <section id="rental-form">
+            <h2>Rent a Car</h2>
+            <form id="rent-form">
+                <label for="car-select">Choose a Car:</label>
+                <select id="car-select" required></select>
+
+                <label for="customer-name">Your Name:</label>
+                <input type="text" id="customer-name" required>
+
+                <label for="rental-days">Number of Days:</label>
+                <input type="number" id="rental-days" min="1" required>
+
+                <button type="submit">Rent Car</button>
+            </form>
+        </section>
+
+        <!-- Rental History -->
+        <section id="rental-history">
+            <h2>Rental History</h2>
+            <ul id="rentals"></ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Car Rental Company. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
